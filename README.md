@@ -1,68 +1,45 @@
-# ANGULAR
-Here I'm gonna share with you  what I'm learning about Angular.
-There is not such thing as Angular 2,4,5,6...there is **AngularJS (1.x)** and **Angular**.
-It's really weird when people say: "I am an Angular 5 developer". 
+# Angular Comprehensive Learning Path
 
-So yeah...please don't do that.
+Welcome to this Angular tutorial repository, a comprehensive resource designed to guide you through various aspects of Angular development. Whether you're a beginner looking to grasp the fundamentals or an advanced developer seeking to hone specific skills, this repository offers a structured path through Angular's capabilities and features.
 
+## Repository Structure
 
-# Set up your Angular app with *SASS*
+The repository is divided into several sections, each focusing on different core concepts and functionalities of Angular:
 
+- **Section 01 - Angular Fundamentals:** Dive into the basics of Angular, understanding the core framework and its primary constructs.
+- **Section 02 - TypeScript Fundamentals:** Learn the essentials of TypeScript, a key language for developing Angular applications.
+- **Section 04 - Handling Events:** Explore how to manage user interactions through event handling in Angular.
+- **Section 05 - Building Reusable Components:** Master the art of creating modular and reusable components in Angular.
+- **Section 06 - Directives:** Delve into Angular directives to manipulate the DOM directly.
+- **Section 07 - Template-Driven Forms:** Understand the template-driven approach to managing forms in Angular.
+- **Section 08 - Reactive Forms:** Learn about reactive forms and how to build dynamic form systems.
+- **Section 09A - Consuming HTTP Services:** Get practical experience with Angular's HTTP client for consuming APIs.
+- **Section 09B - Handling Errors:** Focus on robust error handling strategies in Angular applications.
+- **Section 10 - Routing and Navigation:** Implement routing to enable navigation between different components.
+- **Section 11 - Angular Authentication:** Implement authentication mechanisms to secure your Angular applications.
+- **Section 13 - Firebase Integration:** Learn how to integrate Firebase for backend operations.
+- **Section 15 - Angular Material:** Use Angular Material to build beautiful and responsive layouts.
+- **Section 16 - Redux with Angular:** Explore Redux for managing state in Angular applications in a predictable way.
+- **Section 17 - Advanced Topics:** Push your Angular skills further with advanced concepts and techniques.
 
-## 1. Use Angular CLI
+## Getting Started
 
-Initially, I did not realize that Angular had its own *Command Line Interface* (**CLI**). Although it is not required to use, I found it to be essential. Angular CLI helps the developer fall into the pit of success by implementing “best practices.” For example, using Angular CLI to create a new Angular app will create the recommended folder structure. I use Angular CLI all the time to generate Components and Services, thus making it part of my regular workflow.
+To get started with this learning path:
 
-Like other aspects of Angular, the documentation for Angular CLI is excellent. You can find documentation that describes how to install Angular CLI as well so that you can get up and running quickly.
+1. Clone this repository to your local machine.
+2. Navigate into each section's directory to find specific examples and exercises.
+3. Follow the READMEs in each section to guide your learning process.
 
-Once installed, you can use the “ng new” command within a terminal window to create a new Angular solution. The documentation details various switches that you can use. For example, I used this command to create my application:
+## Prerequisites
 
-`ng new myApp --style sass`
+- Basic knowledge of JavaScript and HTML/CSS.
+- Familiarity with TypeScript is beneficial but not mandatory.
+- Node.js installed on your computer.
+- Angular CLI installed (`npm install -g @angular/cli`).
 
-This creates a new folder called “myApp” and is already configured to use Sass. The “myApp” folder contains the entire folder and file structure for the Angular App. I can open this folder using VS Code and can start the application with the terminal built into VS Code using the CLI Command:
+## Contributing
 
-`ng serve`
+Contributions are welcome! If you have improvements or corrections, please open a pull request or an issue.
 
-In the terminal, you should see the starter template building and then the default browser display the home page.
+Thank you for choosing this repository to learn Angular. Enjoy your journey through Angular development!
 
-*Bonus*: Webpack and Typescript
-
-It was a pleasant surprise to see that the Angular CLI has an opinion about its build process. In the past, creating a build pipeline was a startup task that the Developer undertook. It involved using libraries such as Grunt or Gulp. But, why does JavaScript even need this build process?
-
-Looking at the files generated by Angular CLI, notice that they all have a “.ts” extension. These aren’t JavaScript files, but rather TypeScript files. TypeScript brings static typing during development which will be really familiar to anyone coming from C# like I did. Having static typing improves the tooling that can be added to editors such as Visual Studio Code. But remember, TypeScript is primarily a tool to help the developer. The build process will transpile TypeScript into JavaScript for the browsers.
-
-The second reason why we need a build process is because we are using Sass. Like TypeScript, the Sass files need to be compiled to CSS so that the browser understands them.
-
-Angular CLI uses a library called WebPack for its build pipeline. What is really helpful is that this is already set up for you. Angular provides a file called “.angular-cli.json” that allows you configure different aspects of the build process. But, I’ve found that I rarely need to touch this file.
-
-## 2. Using Bootstrap
-
-Adding Bootstrap 4 to the project is accomplished by using NPM:
-
-`npm install bootstrap@4.0.0`
-
-This will add a dependency to the package.json file and download the Bootstrap files into the node_modules folder. Included in the download are the Sass files that are needed. Font-Awesome can also added the same way:
-
-`npm install font-awesome`
-
-We need to import the Sass files from both projects in order to use them. This can be done by editing the file named “main.scss,” which was by the Angular CLI when the project was created. Specifically, it was the “—style sass” switch that created it. If you forgot to use this switch, then Angular will expect you to use CSS. However, you can configure Angular to use Sass by running the command:
-
-`ng config schematics.@schematics/angular:component '{ styleExt: "scss"}'`
-
-To add the Sass imports, edit the “main.scss” and add the following imports:
-
-`@import "~bootstrap/dist/css/bootstrap.css";`
-
-`$fa-font-path: "~font-awesome/fonts"`
-
-`@import "~font-awesome/scss/font-awesome"`
-
-That is all you have to do. Now the build process will compile the CSS for Bootstrap and Font Awesome and use them in your project.
-
-## 3. NG Bootstrap
-
-Some of the components provided by Bootstrap require a JavaScript reference. Initially, I had to add some configuration to the “scripts” section of the “.angular-cli.json” file. However, this required me to also add configurations for JQuery and Popper.js.
-
-Then I discovered a library called NG Bootstrap that provides Bootstrap 4 components powered by Angular. Since this is an Angular re-implementation of the Bootstrap components, it removes the external references such as JQuery and Popper.
-
-Have I said how much I like the documentation I have found? The documentation for NG Boostrap is also excellent. It provides instructions for their widgets as well as step by step instructions for installing NG Bootstrap.
